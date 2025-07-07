@@ -1,0 +1,12 @@
+requests
+pyrofork
+TgCrypto 
+aiohttp
+tgcrypto
+flask
+dnspython
+pytz
+Faker
+pyromod
+pytz
+dkbotzdb
