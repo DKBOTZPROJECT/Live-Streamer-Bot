@@ -141,3 +141,29 @@ def dkbotz_plan_buttons():
     )
 
 
+PAYMENT_INFO_TEXT = f"""
+<b>🔖 Payment Details</b>
+
+✅ <b>UPI ID:</b> {UPI_ID}
+✅ <b>Crypto:</b> BTC / USDT Address: <code>{CRYPTO}</code>
+✅ <b>Paytm:</b> {PAYTM}
+✅ <b>PhonePe:</b> {PHONEPE}
+✅ <b>PayPal:</b> {PAYPAL}
+✅ <b>Credit / Debit Card:</b> Ask Developer For Link
+
+📸 <b>After Payment, Send Screenshot To Developer.</b>
+
+🖼️ <b>Scan This QR For Quick UPI Payment:</b>
+"""
+
+def dkbotz_payment_buttons():
+    return InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("🏠 Home", callback_data="home"),
+                InlineKeyboardButton("💰 Plans", callback_data="plans")],
+            [
+                InlineKeyboardButton("👨‍💻 Developer", url=f"https://t.me/{DEVELOPER_USERNAME}")
+            ]
+        ]
+    )
