@@ -40,8 +40,7 @@ async def dkbotz_buy_command(bot, message):
         chat_id=message.chat.id,
         photo=QR_IMAGE_URL,
         caption=PAYMENT_INFO_TEXT,
-        reply_markup=dkbotz_payment_buttons(),
-        disable_web_page_preview=True
+        reply_markup=dkbotz_payment_buttons()
     )
 
 
@@ -76,6 +75,5 @@ async def dkbotz_handle_callbacks(bot, query):
             chat_id=query.message.chat.id,
             photo=QR_IMAGE_URL,
             caption=PAYMENT_INFO_TEXT,
-            reply_markup=dkbotz_payment_buttons(),
-            disable_web_page_preview=True
+            reply_markup=dkbotz_payment_buttons()
         )
