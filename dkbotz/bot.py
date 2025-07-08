@@ -47,3 +47,4 @@ async def dkbotz_handle_callbacks(bot, query):
             reply_markup=dkbotz_help_buttons(),
             disable_web_page_preview=True
         )
+
