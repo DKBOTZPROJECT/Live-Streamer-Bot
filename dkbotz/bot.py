@@ -25,6 +25,13 @@ async def dkbotz_help_command(bot, message):
 
 
 
+@DKBOTZ.on_message(filters.command("plan"))
+async def dkbotz_plan_command(bot, message):
+    await message.reply_text(
+        PLAN_DETAILS_TEXT,
+        reply_markup=dkbotz_plan_buttons(),
+        disable_web_page_preview=True
+    )
 
 
 
@@ -47,4 +54,9 @@ async def dkbotz_handle_callbacks(bot, query):
             reply_markup=dkbotz_help_buttons(),
             disable_web_page_preview=True
         )
-
+    elif data == "plans":
+        await query.message.edit_text(
+            PLAN_DETAILS_TEXT,
+            reply_markup=dkbotz_plan_buttons(),
+            disable_web_page_preview=True
+        )
