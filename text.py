@@ -100,6 +100,44 @@ def dkbotz_help_buttons():
 
 
 
+PLAN_DETAILS_TEXT = """
+💰 <b>Our Streaming Plans</b>
 
+🎬 <b>Plan List:</b>
+▫️ <b>24 Hours (1 Day)</b> — ₹19 Only
+▫️ <b>1 Week</b> — ₹119 Only
+▫️ <b>1 Month</b> — ₹499 Only
+▫️ <b>2 Months</b> — ₹899 Only
+▫️ <b>3 Months</b> — ₹1,299 Only
+
+💳 <b>Payment Methods:</b>
+✅ UPI (All Apps Supported)
+✅ Crypto Currency (BTC / USDT etc.)
+✅ QR Code
+✅ Paytm
+✅ PhonePe
+✅ PayPal
+✅ Credit / Debit Card
+
+📝 <b>Note:</b> After Payment, Please Send Payment Screenshot To Developer.
+
+👇 Tap Buy Now To Get Payment Details!
+"""
+
+
+
+
+def dkbotz_plan_buttons():
+    return InlineKeyboardMarkup(
+        [
+            [InlineKeyboardButton("🛒 Buy Now", callback_data="buy_now")],
+            [
+                InlineKeyboardButton("🏠 Home", callback_data="home"),
+                InlineKeyboardButton("ℹ️ Help", callback_data="help")],
+            [
+                InlineKeyboardButton("👨‍💻 Developer", url=f"https://t.me/{DEVELOPER_USERNAME}")
+            ]
+        ]
+    )
 
 
