@@ -28,3 +28,78 @@ def start_buttons():
             ]
         ]
     )
+
+
+
+HELP_MESSAGE = """
+👋 <b>Hello Dear User!</b>
+
+I Am A Powerful Bot That Helps You Stream <b>24/7 Videos</b> Without Any Break On Platforms Like:
+
+🔴 <b>YouTube</b>  
+🔵 <b>Facebook</b>  
+🟣 <b>And Other Streaming Sites</b>
+
+<b>✨ What I Can Do:</b>  
+✅ Stream Videos 24/7 Automatically  
+✅ Run Live Streams For Personal, Brand, Or Business Use  
+✅ Schedule And Manage Your Broadcasts Easily  
+✅ Offer Budget-Friendly Streaming Plans
+
+<b>💳 Payment Methods Supported:</b>  
+✔️ UPI  
+✔️ Paytm  
+✔️ PhonePe  
+✔️ Crypto (BTC / USDT)  
+✔️ PayPal  
+✔️ Credit / Debit Cards
+
+<b>📝 How To Start:</b>  
+1️⃣ Use /plan To View Available Plans  
+2️⃣ Tap <b>Buy Now</b> To Get Payment Info  
+3️⃣ Complete The Payment And Send Screenshot To Developer  
+4️⃣ Your Stream Will Be Activated Shortly!
+
+<b>⚙️ How To Setup Live Stream:</b>  
+- Send <code>/setup</code>  
+- It Will Ask: <b>"Do You Want To Loop The Video?"</b>  
+- Then Send The Video File  
+- Then Send Your <b>Stream Key</b>  
+✅ That’s It! Your Stream Will Start Automatically
+
+<b>🛑 To Stop Live:</b>  
+- Send <code>/stop</code> – To Gracefully Stop The Stream  
+- Send <code>/force_stop</code> – To Force Stop Immediately
+
+<b>✅ Available Commands:</b>  
+/start – Show Welcome Message  
+/help – Show This Help Guide  
+/plan – View Plans And Pricing  
+/setup – Start Your Live Stream  
+/stop – Stop Streaming Safely  
+/force_stop – Force Stop Live Immediately
+
+👇 Tap The Buttons Below To Continue!
+"""
+
+
+def dkbotz_help_buttons():
+    return InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("🏠 Home", callback_data="home"),
+                InlineKeyboardButton("💰 Plans", callback_data="plans")
+            ],
+            [
+                InlineKeyboardButton("👨‍💻 Developer", url=f"https://t.me/{DEVELOPER_USERNAME}"),
+                InlineKeyboardButton("📢 Channel", url=f"https://t.me/{CHANNEL_USERNAME}")
+            ]
+        ]
+    )
+
+
+
+
+
+
+
