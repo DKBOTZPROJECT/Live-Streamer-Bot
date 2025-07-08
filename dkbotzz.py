@@ -1,5 +1,5 @@
 from pyrogram import Client as DKBOTZ
-from Config Import *
+from Config import *
 
 app = DKBOTZ(
     "dkbotz_streamer_bot",
