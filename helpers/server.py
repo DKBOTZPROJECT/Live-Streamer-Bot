@@ -8,20 +8,19 @@ rtmp_urls = {
 
 
 
-def send_task_request(username, password, product, server, value, task_data):
+def send_task_request(username, password, product, value, task_data):
     encoded_data = json.dumps(task_data)
     
     params = {
         "username": username,
         "password": password,
         "product": product,
-        "server": server,
         "value": value,
         "data": encoded_data
     }
 
     try:
-        res = requests.get("https://ytlive.dkbotzpro.in/add_task.php", params=params, timeout=10)
+        res = requests.get("https://ytlive.dkbotzpro.in/add_task.php", params=params, timeout=15)
         response = res.json()
         return response['status']
     except:
