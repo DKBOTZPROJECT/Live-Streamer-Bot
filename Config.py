@@ -19,3 +19,9 @@ CRYPTO = environ.get("CRYPTO", "Contact To @DKBOTZHELP")
 PAYTM = environ.get("PAYTM", "dkbotz@ybl")
 PHONEPE = environ.get("PHONEPE", "dkbotz@ybl")
 PAYPAL = environ.get("PAYPAL", "Contact To @DKBOTZHELP")
+
+
+# premium.dkkbotzpro.in Account Details
+PREMIUM_USERNAME = environ.get("PREMIUM_USERNAME")
+PREMIUM_PASSWORD = environ.get("PREMIUM_PASSWORD")
+PRODUCT_NAME = "Traffic-Tool-V1"
