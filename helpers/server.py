@@ -8,14 +8,14 @@ rtmp_urls = {
 
 
 
-def send_task_request(username, password, product, value, task_data):
+def send_task_request(username, password, product, task_data):
     encoded_data = json.dumps(task_data)
     
     params = {
         "username": username,
         "password": password,
         "product": product,
-        "value": value,
+        "value": "add_task",
         "data": encoded_data
     }
 
