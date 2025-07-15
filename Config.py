@@ -30,3 +30,7 @@ PRODUCT_NAME = "Traffic-Tool-V1"
 # Video Uploaser
 BYTESCALE_ACCOUNT_ID = environ.get("BYTESCALE_ACCOUNT_ID", "")
 BYTESCALE_PUBLIC_KEY = environ.get("BYTESCALE_PUBLIC_KEY", "")
+
+
+# Don't Edit
+ALLOWED_MIME_TYPES = ['video/mp4', 'video/x-matroska']
