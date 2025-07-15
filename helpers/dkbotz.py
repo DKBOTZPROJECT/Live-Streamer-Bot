@@ -2,7 +2,7 @@ import requests
 import os
 import random
 import string
-
+from Config import *
 
 def generate_random_string(length=6):
     return ''.join(random.choices(string.ascii_lowercase + string.digits, k=length))
