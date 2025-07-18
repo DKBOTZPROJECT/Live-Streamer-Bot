@@ -37,3 +37,43 @@ def create_run_task(file_link, rtmp_url, rtmp_key, loop=True, stop_time=1000):
         "rtmp_key": rtmp_key
     }
     return task
+
+def get_task_status(username, password, id, product):
+
+    params = {
+        "username": username,
+        "password": password,
+        "id": id,
+        "product": product,
+        "value": "get_task",
+    }
+
+    try:
+        res = requests.get("https://ytlive.dkbotzpro.in/add_online.php", params=params, timeout=15)
+        response = res.json()
+        
+        return response
+    except:
+        return False
+
+
+def edit_task_status(username, password, id, product, froce_stop=False, stop=False):
+
+    params = {
+        "username": username,
+        "password": password,
+        "id": id,
+        "product": product,
+        "value": "edit_task",
+        "froce_stop": "true" if froce_stop else "false",
+        "stop": "true" if stop else "false"
+    }
+
+    try:
+        res = requests.get("https://ytlive.dkbotzpro.in/add_online.php", params=params, timeout=15)
+        response = res.json()
+        
+        return response
+    except:
+        return False
+
