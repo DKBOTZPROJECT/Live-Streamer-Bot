@@ -2,7 +2,9 @@ from pyrogram import Client as DKBOTZ, filters
 from pyrogram.types import *
 from Config import *
 from text import *
-
+from helpers import *
+from datetime import datetime
+import pytz
 
 
 # /start cmd
@@ -77,3 +79,17 @@ async def dkbotz_handle_callbacks(bot, query):
             caption=PAYMENT_INFO_TEXT,
             reply_markup=dkbotz_payment_buttons()
         )
+    elif data.startswith("refresh_"):
+        stream_id = data.split("_")[1]
+
+        dkbotz = get_task_status(PREMIUM_USERNAME, PREMIUM_PASSWORD, stream_id, PRODUCT_NAME)
+        if not dkbotz["status"]:
+            await query.answer("⏳ Wait! Your Task Has Not Started Yet.\nPlease wait 2 minutes.", show_alert=True)
+            return
+        
+        stream_status = dkbotz["task"]['task']
+        stream_msg = dkbotz['task']["message"]
+        time = datetime.now(pytz.timezone("Asia/Kolkata")).strftime("%d-%m-%Y %I:%M:%S %p")
+
+        await query.answer("🔄 Status Refreshed!")
+        await query.message.edit_text(f"✅ <b>Stream Status Refreshed</code>\n\n📡 <b>Status:</b> {stream_status}\n\n📝 <b>Info:</b> {stream_msg}\n\n🕒 <b>Updated at:</b> <code>{time}</code>", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔄 Refresh", callback_data=f"refresh_{stream_id}")], [InlineKeyboardButton("👨‍💻 Developer", url=f"https://t.me/{DEVELOPER_USERNAME}")]]))
