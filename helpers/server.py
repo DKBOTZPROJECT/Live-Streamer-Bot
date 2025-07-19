@@ -20,11 +20,14 @@ def send_task_request(username, password, product, task_data):
     }
 
     try:
-        res = requests.get("https://ytlive.dkbotzpro.in/add_task.php", params=params, timeout=15)
+        res = requests.get("https://ytlive.dkbotzpro.in/task", params=params, timeout=15)
         response = res.json()
-        return response['status']
+        status = response['status']
+        if not status:
+            return False, response['message']
+        return status, response['task']['id']
     except:
-        return False
+        return None, False
 
 
 def create_run_task(file_link, rtmp_url, rtmp_key, loop=True, stop_time=1000):
@@ -49,7 +52,8 @@ def get_task_status(username, password, id, product):
     }
 
     try:
-        res = requests.get("https://ytlive.dkbotzpro.in/add_online.php", params=params, timeout=15)
+
+        res = requests.get("https://ytlive.dkbotzpro.in/task", params=params, timeout=15)
         response = res.json()
         
         return response
@@ -70,10 +74,9 @@ def edit_task_status(username, password, id, product, froce_stop=False, stop=Fal
     }
 
     try:
-        res = requests.get("https://ytlive.dkbotzpro.in/add_online.php", params=params, timeout=15)
+        res = requests.get("https://ytlive.dkbotzpro.in/task", params=params, timeout=15)
         response = res.json()
         
         return response
     except:
         return False
-
