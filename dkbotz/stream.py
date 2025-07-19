@@ -139,8 +139,8 @@ async def dkbotz_handle_setup(bot, message):
     task_data = create_run_task(video_link, stream_url, stream_key, loop, loop_time)
 
 
-    streamer = send_task_request(PREMIUM_USERNAME, PREMIUM_PASSWORD, PRODUCT_NAME, task_data)
+    streamer, id = send_task_request(PREMIUM_USERNAME, PREMIUM_PASSWORD, PRODUCT_NAME, task_data)
     if streamer:
-        await bot.send_message(user_id, f"✅ <b>That’s It! Your Stream Will Start Automatically in 2 minutes.</b>\n\n")
+        await bot.send_message(user_id, f"✅ <b>That’s It! Your Stream Will Start Automatically in 2 minutes.</b>\n\n", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔄 Refresh", callback_data=f"refresh_{id}")], [InlineKeyboardButton("👨‍💻 Developer", url=f"https://t.me/{DEVELOPER_USERNAME}")]]))
     else:
-        await bot.send_message(user_id, f"❌ <b>There is No Online Server Available All Server Are Busy.</b>\n\nContact Our <b>Owner</b>: @{DEVELOPER_USERNAME}")
+        await bot.send_message(user_id, f"❌ <b>There is No Online Server Available All Server Are Busy.</b>\n\nServer Response: {id}\n\nContact Our <b>Owner</b>: @{DEVELOPER_USERNAME}")
