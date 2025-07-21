@@ -31,6 +31,10 @@ PRODUCT_NAME = "Traffic-Tool-V1"
 BYTESCALE_ACCOUNT_ID = environ.get("BYTESCALE_ACCOUNT_ID", "")
 BYTESCALE_PUBLIC_KEY = environ.get("BYTESCALE_PUBLIC_KEY", "")
 
+# Database Configuration
+DB_TYPE = environ.get("DB_TYPE", "dkbotz") # Use 'mongodb' For MongoDB. Changes it If You Have Not db.dkbotzpro.in Token
+DB_TOKEN = environ.get("DB_TOKEN", "")
+DB_URI = DB_TOKEN
 
 # Don't Edit
 ALLOWED_MIME_TYPES = ['video/mp4', 'video/x-matroska']
