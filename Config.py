@@ -14,10 +14,10 @@ DEVELOPER_USERNAME = environ.get("DEVELOPER_USERNAME", "DKBOTZPRO")
 
 # Payment Method
 QR_IMAGE_URL = environ.get("QR_IMAGE_URL", "https://premium.dkbotzpro.in/QR.jpg")
-UPI_ID = environ.get("UPI_ID", "dkbotz@ybl")
+UPI_ID = environ.get("UPI_ID", "dkbotzhelp@ybl")
 CRYPTO = environ.get("CRYPTO", "Contact To @DKBOTZHELP")
-PAYTM = environ.get("PAYTM", "dkbotz@ybl")
-PHONEPE = environ.get("PHONEPE", "dkbotz@ybl")
+PAYTM = environ.get("PAYTM", "dkbotzhelp@ybl")
+PHONEPE = environ.get("PHONEPE", "dkbotzhelp@ybl")
 PAYPAL = environ.get("PAYPAL", "Contact To @DKBOTZHELP")
 
 
