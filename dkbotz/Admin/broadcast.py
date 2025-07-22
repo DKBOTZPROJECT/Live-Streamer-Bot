@@ -40,7 +40,7 @@ async def send_msg(user_id, message):
 
 @DKBOTZ.on_message(filters.command("broadcast") & filters.private & filters.user(AUTH_USERS) & filters.reply)
 async def dkbotz_broadcast_admin(c, m):
-    all_users = await db.get_all_users()
+    all_users = db.get_all_users()
     broadcast_msg = m.reply_to_message
     while True:
         broadcast_id = "".join([random.choice(string.ascii_letters) for i in range(3)])
@@ -50,7 +50,7 @@ async def dkbotz_broadcast_admin(c, m):
         text=f"Broadcast initiated! You will be notified with log file when all the users are notified."
     )
     start_time = time.time()
-    total_users = await db.total_users_count()
+    total_users = db.total_users_count()
     done = 0
     failed = 0
     success = 0
@@ -67,7 +67,7 @@ async def dkbotz_broadcast_admin(c, m):
             else:
                 failed += 1
             # if sts == 400:
-            #    await db.delete_user(user['id'])
+            #    db.delete_user(user['id'])
             done += 1
             if broadcast_ids.get(broadcast_id) is None:
                 break
