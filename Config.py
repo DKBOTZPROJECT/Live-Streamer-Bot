@@ -12,6 +12,7 @@ BOT_TOKEN = environ.get("BOT_TOKEN", "your_bot_token")
 CHANNEL_USERNAME = environ.get("CHANNEL_USERNAME", "DKBOTZ")
 DEVELOPER_USERNAME = environ.get("DEVELOPER_USERNAME", "DKBOTZPRO")
 AUTH_USERS = [int(i) for i in os.environ.get("AUTH_USERS", "6288851295").split(" ")]
+PAID_BOT = environ.get("PAID_BOT", "YES")
 
 # Payment Method
 QR_IMAGE_URL = environ.get("QR_IMAGE_URL", "https://premium.dkbotzpro.in/QR.jpg")
