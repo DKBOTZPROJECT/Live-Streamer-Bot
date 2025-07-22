@@ -25,7 +25,7 @@ class Database:
             paid_status={
                 'is_paid': False,
                 'paid_duration': 0,
-                'paid_on': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                'paid_on': datetime.datetime.now().isoformat(),
                 'paid_username': '',
                 'paid_reason': ''
             },
@@ -94,7 +94,7 @@ class Database:
         paid_status = {
             'is_paid': False,
             'paid_duration': 0,
-            'paid_on': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'paid_on': datetime.datetime.now().isoformat(),
             'paid_username': '',
             'paid_reason': ''
         }
@@ -106,7 +106,7 @@ class Database:
         return user.get("paid_status", {
             'is_paid': False,
             'paid_duration': 0,
-            'paid_on': datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'paid_on': datetime.datetime.now().isoformat(),
             'paid_username': '',
             'paid_reason': ''
         })
