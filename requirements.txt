@@ -1,13 +1,9 @@
 requests
 pyrofork
-TgCrypto 
+TgCrypto
+aiofiles
 aiohttp
 tgcrypto
-flask
 dnspython
 pytz
-Faker
-pyromod
-pytz
 dkbotzdb
-aiofiles
