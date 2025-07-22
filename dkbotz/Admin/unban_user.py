@@ -30,7 +30,7 @@ async def dkbotz_unban_admin(c, m):
             unban_log_text += (
                 f"\n\nUser notification failed !!! \n\n`{traceback.format_exc()}`"
             )
-        await db.remove_ban(user_id)
+        db.remove_ban(user_id)
         log.debug(unban_log_text)
         await m.reply_text(unban_log_text, quote=True)
     except Exception as e:
