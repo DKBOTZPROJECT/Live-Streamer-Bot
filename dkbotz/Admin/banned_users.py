@@ -5,7 +5,7 @@ from helpers import *
 
 @DKBOTZ.on_message(filters.private & filters.command("banned_users") & filters.user(AUTH_USERS))
 async def dkbotz_banned_usrs_admin(c, m):
-    all_banned_users = await db.get_all_banned_users()
+    all_banned_users = db.get_all_banned_users()
     banned_usr_count = 0
     text = ""
     async for banned_user in all_banned_users:
