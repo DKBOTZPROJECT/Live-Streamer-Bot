@@ -10,6 +10,7 @@ import pytz
 # /start cmd
 @DKBOTZ.on_message(filters.command("start"))
 async def dkbotz_handle_start(bot, message):
+    add_new_user(message.from_user.id)
     await message.reply_text(
         START_MESSAGE,
         reply_markup=start_buttons(),
@@ -29,6 +30,7 @@ async def dkbotz_help_command(bot, message):
 # /plan Cmd
 @DKBOTZ.on_message(filters.command("plan"))
 async def dkbotz_plan_command(bot, message):
+    add_new_user(message.from_user.id)
     await message.reply_text(
         PLAN_DETAILS_TEXT,
         reply_markup=dkbotz_plan_buttons(),
@@ -38,6 +40,7 @@ async def dkbotz_plan_command(bot, message):
 # /buy Cmd
 @DKBOTZ.on_message(filters.command("buy"))
 async def dkbotz_buy_command(bot, message):
+    add_new_user(message.from_user.id)
     await bot.send_photo(
         chat_id=message.chat.id,
         photo=QR_IMAGE_URL,
