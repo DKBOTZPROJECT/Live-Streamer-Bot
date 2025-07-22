@@ -93,6 +93,7 @@ async def ask(bot, message, text, is_file=False, numeric=False):
 @DKBOTZ.on_message(filters.command("setup"))
 async def dkbotz_handle_setup(bot, message):
     user_id = message.from_user.id
+    add_new_user(user_id)
 
     if user_id in cancelled_users:
         cancelled_users.remove(user_id)
