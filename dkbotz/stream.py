@@ -94,7 +94,9 @@ async def ask(bot, message, text, is_file=False, numeric=False):
 async def dkbotz_handle_setup(bot, message):
     user_id = message.from_user.id
     add_new_user(user_id)
-
+    premium = await premium_check(bot, message)
+    if not premium:
+        return
     if user_id in cancelled_users:
         cancelled_users.remove(user_id)
 
