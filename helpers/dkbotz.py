@@ -3,6 +3,7 @@ import os
 import random
 import string
 from Config import *
+from .db import *
 
 def generate_random_string(length=6):
     return ''.join(random.choices(string.ascii_lowercase + string.digits, k=length))
@@ -25,4 +26,6 @@ def check_video_link(url):
     except requests.RequestException:
         return False
 
-  
+def add_new_user(user_id):
+    if not db.is_user_exist(user_id):
+        db.add_user(user_id)
