@@ -10,3 +10,4 @@ Faker
 pyromod
 pytz
 dkbotzdb
+aiofiles
