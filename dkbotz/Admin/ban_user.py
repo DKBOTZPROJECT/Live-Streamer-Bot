@@ -36,7 +36,7 @@ async def dkbotz_ban_admin(c, m):
             ban_log_text += (
                 f"\n\nUser notification failed !!!\n\n`{traceback.format_exc()}`"
             )
-        await db.ban_user(user_id, ban_duration, ban_reason)
+        db.ban_user(user_id, ban_duration, ban_reason)
         log.debug(ban_log_text)
         await m.reply_text(ban_log_text, quote=True)
     except Exception as e:
