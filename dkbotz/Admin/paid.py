@@ -166,7 +166,7 @@ async def dkbotz_paid_ss_admin(c, m):
     )
 
 
-@Client.on_message(filters.private & filters.command("paid_status") & filters.user(AUTH_USERS))
+@DKBOTZ.on_message(filters.private & filters.command("paid_status") & filters.user(AUTH_USERS))
 async def dkbotz_paid_statusss_admin(c, m):
     if len(m.command) == 1:
         await m.reply_text(
