@@ -7,3 +7,4 @@ tgcrypto
 dnspython
 pytz
 dkbotzdb
+pymongo
