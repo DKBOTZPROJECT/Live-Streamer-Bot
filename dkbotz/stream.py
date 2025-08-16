@@ -47,12 +47,29 @@ async def ask(bot, message, text, is_file=False, numeric=False):
 
                     if mime_type in ALLOWED_MIME_TYPES:
                         random_id = generate_random_string()
+                        down = await bot.send_message(user_id, "⏳ Downloading Your Video... 📂")
+
                         file_path = await response.download(file_name=f"{user_id}_{random_id}_video.mp4")
+
+                        if not BYTESCALE_ACCOUNT_ID or not BYTESCALE_PUBLIC_KEY:
+                            await bot.send_message(user_id, "⚠️ Video Features *Unavailable*.\n\n👉 Please Send Only **Direct Video Link** 🔗")
+                            try:
+                                await down.delete()
+                            except:
+                                pass
+                            return False
+
+                        
 
                         link = upload_to_bytescale(file_path, BYTESCALE_ACCOUNT_ID, BYTESCALE_PUBLIC_KEY)
 
                         if os.path.exists(file_path):
                             os.remove(file_path)
+
+                        try:
+                            await down.delete()
+                        except:
+                            pass
 
                         if link and check_video_link(link):
                             return link
